@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 import * as tstl from "typescript-to-lua";
-const luamin = require('luamin')
+import * as luamin from "luamin";
 
 const Settings = {
   RenameVariables: true,
@@ -16,7 +16,7 @@ const plugin: tstl.Plugin = {
     result: tstl.ProcessedFile[],
   ) {
     for (const file of result) {
-      file.code = "-- TETRIS, David PHAM-VAN\n" + luamin.minify(file.code)
+      file.code = luamin.minify(file.code)
     }
   },
 };

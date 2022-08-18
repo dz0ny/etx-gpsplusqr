@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/TypeScriptToLua/vscode-typescript-to-lua/master/tsconfig-schema.json",
   "compilerOptions": {
     "target": "esnext",
     "lib": [
@@ -18,9 +19,13 @@
     "luaTarget": "5.2",
     "luaLibImport": "inline",
     "noHeader": true,
-    "noImplicitSelf": true,
+    "noImplicitSelf": false,
     "luaPlugins": [
-      { "name": "./plugins/minify.ts" },
+      {
+        "name": "./plugins/minify.ts"
+      }
     ],
-  },
+    "luaBundle": "./qrgpsplus.lua",
+    "luaBundleEntry": "./src/qr.ts"
+  }
 }
